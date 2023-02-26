@@ -3,9 +3,11 @@
   padding: 0;
   margin: 0;
   font-family: 'Raleway', sans-serif;
+  color: #f1f1f1;
 }
 .wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -16,21 +18,21 @@
 }
 .follow {
   position: absolute;
-  width: 700px;
-  height: 600px;
+  width: 400px;
+  aspect-ratio: 1;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
   overflow: hidden;
-  border-radius: 50%;
-  animation: rainbow 30s infinite;
+  border-radius: 25% 50% 25% 50%;
+  animation: rotate 15s linear infinite;
 }
 .colors {
   position: relative;
   width: 2800px;
   height: 100%;
   background: linear-gradient(90deg, #F72585, #7209b7, #3a0ca3, #4361ee, #4cc9f0);
-  animation: colorScroll 10s infinite alternate;
+  animation: colorScroll 30s infinite alternate;
 }
 .backdrop {
   width: 100%;
@@ -39,18 +41,44 @@
   z-index: 2;
   backdrop-filter: blur(200px);
 }
-h1 {
-  font-size: 3rem;
+h1, h2, h3 {
   font-weight: 200;
   text-align: center;
-  color: #f1f1f1;
   z-index: 3;
+  pointer-events: none;
 }
-@keyframes rainbow {
-  0% {rotate: 0deg;}
-  100% {rotate: 360deg;}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 1rem;
+  margin-top: 60px;
+  color: #181818;
+}
+h3 {
+  font-size: 0.8rem;
+  position: absolute;
+  rotate: 90deg;
+  left: 0;
+}
+@keyframes rotate {
+  0% {rotate: 0deg;border-radius: 25% 50% 25% 50%}
+  50% {scale: 1.3;border-radius: 40% 45% 40% 15%}
+  75% {border-radius: 50% 20% 55% 5%}
+  100% {rotate: 360deg;border-radius: 25% 50% 25% 50%}
 }
 @keyframes colorScroll {
   0% {right: 0}
   100% {right: 2000px}
+}
+@media only screen and (max-width: 600px) {
+  .follow {
+    width: 300px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    left: -20px;
+  }
 }

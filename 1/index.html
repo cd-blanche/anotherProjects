@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>CSS One</title>
+  <title>Mouse Blob - Beautiful</title>
 </head>
 <body>
   <div class="wrapper">
@@ -17,11 +17,11 @@
     </div>
     <div class="backdrop"></div>
     <h1>Beautiful.</h1>
+    <h2>Just like you &#9825;</h2>
+    <h3>Jacques Martinez</h3>
   </div>
   <script>
-
     const box = document.querySelector('.follow');
-
     // Attach center of div to mouse
     // As mouse moves,
     // the position of the div changes in real time
@@ -34,8 +34,7 @@
         left: `${e.clientX}px`,
         top: `${e.clientY}px`
       }, {duration: 3000, fill: "forwards"});
-    }
-
+    };
   </script>
 </body>
 </html>
