@@ -16,24 +16,38 @@
       <div class="colors"></div>
     </div>
     <div class="backdrop"></div>
-    <h1>Beautiful.</h1>
+    <div class="title-wrapper">
+      <h1>Beautiful.</h1>
+    </div>
     <h2>Just like you &#9825;</h2>
     <h3>Jacques Martinez</h3>
   </div>
   <script>
     const box = document.querySelector('.follow');
-    // Attach center of div to mouse
-    // As mouse moves,
-    // the position of the div changes in real time
+    const titleWrapper = document.querySelector('.title-wrapper')
+    const title = document.querySelector('h1');
+
     document.addEventListener('mousemove', follow);
+    titleWrapper.addEventListener('mousemove', moveBox);
+    titleWrapper.addEventListener('mouseout', resetBox);
 
     function follow(e) {
-      // box.style.left = `${e.clientX}px`
-      // box.style.top = `${e.clientY}px`
       box.animate({
         left: `${e.clientX}px`,
         top: `${e.clientY}px`
       }, {duration: 3000, fill: "forwards"});
+    };
+
+    function moveBox(e) {
+      title.animate({
+        transform: `perspective(100px) rotateX(${-((e.offsetY - 60) / 2)}deg) rotateY(${(e.offsetX - 200) / 40}deg)`
+      }, {duration: 1000})
+    };
+
+    function resetBox(e) {
+      title.animate({
+      transform: `perspective(100px) rotateX(0deg) rotateY(0deg)`
+      }, {duration: 1000})
     };
   </script>
 </body>

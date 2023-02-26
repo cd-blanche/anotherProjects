@@ -4,6 +4,7 @@
   margin: 0;
   font-family: 'Raleway', sans-serif;
   color: #f1f1f1;
+  cursor: default;
 }
 .wrapper {
   display: flex;
@@ -26,6 +27,7 @@
   overflow: hidden;
   border-radius: 25% 50% 25% 50%;
   animation: rotate 15s linear infinite;
+  z-index: 1;
 }
 .colors {
   position: relative;
@@ -45,10 +47,19 @@ h1, h2, h3 {
   font-weight: 200;
   text-align: center;
   z-index: 3;
-  pointer-events: none;
+}
+.title-wrapper {
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 400px;
 }
 h1 {
   font-size: 3rem;
+  z-index: 3;
+  text-shadow: 0 0 4px #f1f1f1;
 }
 h2 {
   font-size: 1rem;
