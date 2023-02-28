@@ -1,6 +1,7 @@
 :root {
   --header-bar-color: #F5F3F4;
   --main-font-color-dark: #0B090A;
+  --header-nav-bg: 
 }
 * {
   box-sizing: border-box;
@@ -11,7 +12,7 @@
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background-image: url('anotherOS-wallpaper.jpg');
+  background-image: url('img/anotherOS-wallpaper.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -21,15 +22,40 @@
   align-items: center;
   height: 2.5vh;
   width: 100%;
-  padding: 0px 15px;
   color: var(--main-font-color-dark);
   background-color: var(--header-bar-color);
-  border-bottom: 2px inset black;
+  border-bottom: 2px inset #0B090A;
 }
 .nav-list {
   display: flex;
-  gap: 1vw;
   font-size: 0.9rem;
   list-style-type: none;
   cursor: default;
+}
+.another-os-logo {
+  height: 2vh;
+  vertical-align: middle;
+}
+.nav-item {
+  /* border: 1px solid black; */
+  padding: 0 10px;
+  transition: background-color 0.2s;
+  position: relative;
+
+}
+.nav-item:hover,
+.inner-item:hover {
+  background-color: #B1A7A6;
+}
+.inner-list {
+  position: absolute;
+  width: 150px;
+  left: 0;
+  z-index: 1;
+  background-color: var(--header-bar-color);
+  border-bottom: 2px inset #0B090A;
+  border-radius: 0 0 3px 3px;
+}
+.inner-item {
+  padding: 0px 5px;
 }
