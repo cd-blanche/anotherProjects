@@ -1,0 +1,32 @@
+:root {
+  --header-bar-color: #F5F3F4;
+  --main-font-color-dark: #0B090A;
+}
+* {
+  /* box-sizing: border-box; */
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('anotherOS-wallpaper.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.header {
+  height: 2vh;
+  width: 100%;
+  background-color: var(--header-bar-color);
+  border-bottom: 2px inset black;
+  color: var(--main-font-color-dark);
+  padding: 2px 5px;
+}
+.nav-list {
+  display: flex;
+  list-style-type: none;
+  gap: 1vw;
+  cursor: default;
+}
